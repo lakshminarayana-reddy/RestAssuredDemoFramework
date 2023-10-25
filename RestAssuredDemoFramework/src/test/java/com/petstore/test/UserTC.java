@@ -19,16 +19,41 @@ public class UserTC {
 		user = new User();
 		
 		user.setId(faker.idNumber().hashCode());
+		user.setUsername(faker.name().username());
 		user.setFirstName(faker.name().firstName());
 		user.setLastName(faker.name().lastName());
 		user.setEmail(faker.internet().safeEmailAddress());
 		user.setPassword(faker.internet().password(5,10));
 		user.setPhone(faker.phoneNumber().cellPhone());
 	}
-	@Test
+	@Test(priority=1)
 	public void testCreateUser() {
 		Response response =UserEndPoints.createUser(user);
 		response.then().log().all();
 		Assert.assertEquals(response.getStatusCode(),200);
+		System.out.println(user.getUsername());
+	}
+	@Test(priority=2)
+	public void testGetUser() {
+		Response response = UserEndPoints.getUser(user.getUsername());
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
+		System.out.println(user.getUsername());
+	}
+	@Test(priority=3)
+	public void testUpdateUser() {
+		user.setLastName(faker.name().lastName());
+		user.setEmail(faker.internet().safeEmailAddress());
+		Response response = UserEndPoints.updateUser(user, user.getUsername());
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
+		System.out.println(user.getUsername());
+	}
+	@Test(priority=4)
+	public void testDeleteUser() {
+		Response response = UserEndPoints.deleteUser(user.getUsername());
+		response.then().log().all();
+		Assert.assertEquals(response.getStatusCode(), 200);
+		System.out.println(user.getUsername());
 	}
 }
