@@ -21,8 +21,8 @@ public class ExcelUtility {
 	FileInputStream fis;
 	FileOutputStream fos;
 	public ExcelUtility(String excelPath, String sheetName) {
-		this.excelPath=excelPath;
-		this.sheetName=sheetName;
+		//this.excelPath=excelPath;
+		//this.sheetName=sheetName;
 		try {
 			workBook = new XSSFWorkbook(excelPath);
 			sheet=workBook.getSheet(sheetName);
@@ -34,21 +34,30 @@ public class ExcelUtility {
 		int rowCount;
 		rowCount=sheet.getPhysicalNumberOfRows();
 		//rowCount=sheet.getLastRowNum(); -->Second method
+		System.out.println(rowCount);
 		return rowCount;
 	}
 	public int getColCount(String sheetName, int rowNum) {
 		int colCount;
 		colCount=sheet.getRow(0).getPhysicalNumberOfCells();
+		System.out.println(colCount);
 		//colCount=row.getLastCellNum(); -->Second method
 		return colCount;
 	}
-	public String getCellData(String sheetName, int rowNum, int colNum) {
-		row=sheet.getRow(rowNum);
-		col=row.getCell(colNum);
-		String cellData;
-		DataFormatter data = new DataFormatter();
-		cellData=data.formatCellValue(col);
-		return cellData;
+	public String getCellData(String sheetName, int rowNum, int colNum){
+		try {
+			row=sheet.getRow(rowNum);
+			col=row.getCell(colNum);
+			String cellData;
+			DataFormatter data = new DataFormatter();
+			cellData=data.formatCellValue(col);
+			System.out.println("CellData of "+rowNum+"&"+colNum+" is:"+cellData);
+			return cellData;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return "NuLL";
+		}
 	}
 	public void setCellData(String sheetName, int rowNum, int colNum, String data) throws IOException {
 		File file = new File(excelPath);
