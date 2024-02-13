@@ -1,101 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-05T22:00:00 IST" name="Default suite" finished-at="2023-11-05T22:00:15 IST" duration-ms="15553">
+  <suite started-at="2023-11-08T07:46:25 IST" name="PetSuite" finished-at="2023-11-08T07:46:34 IST" duration-ms="8652">
     <groups>
     </groups>
-    <test started-at="2023-11-05T22:00:00 IST" name="Default test" finished-at="2023-11-05T22:00:15 IST" duration-ms="15553">
-      <class name="com.petstore.test.DataDrivenTest">
-        <test-method signature="postUser(java.util.Hashtable)[pri:1, instance:com.petstore.test.DataDrivenTest@576d5deb]" started-at="2023-11-05T22:00:02 IST" name="postUser" data-provider="Data" finished-at="2023-11-05T22:00:07 IST" duration-ms="5072" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{FirstName=TestA, UserId=4522, Password=password-a, LastName=UserA, Phone=974613256, UserName=testuser-a, Email=a@gmail.com}]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2023-11-08T07:46:25 IST" name="Test" finished-at="2023-11-08T07:46:34 IST" duration-ms="8652">
+      <class name="com.petstore.test.UserTCPropFile">
+        <test-method is-config="true" signature="setUpData()[pri:0, instance:com.petstore.test.UserTCPropFile@76a4ebf2]" started-at="2023-11-08T07:46:26 IST" name="setUpData" finished-at="2023-11-08T07:46:26 IST" duration-ms="387" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postUser -->
-        <test-method signature="postUser(java.util.Hashtable)[pri:1, instance:com.petstore.test.DataDrivenTest@576d5deb]" started-at="2023-11-05T22:00:07 IST" name="postUser" data-provider="Data" finished-at="2023-11-05T22:00:08 IST" duration-ms="1228" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{FirstName=TestB, UserId=2122, Password=password-b, LastName=UserB, Phone=665696264, UserName=testuser-b, Email=b@gmail.com}]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setUpData -->
+        <test-method signature="testCreateUser()[pri:1, instance:com.petstore.test.UserTCPropFile@76a4ebf2]" started-at="2023-11-08T07:46:26 IST" name="testCreateUser" finished-at="2023-11-08T07:46:31 IST" duration-ms="4669" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postUser -->
-        <test-method signature="postUser(java.util.Hashtable)[pri:1, instance:com.petstore.test.DataDrivenTest@576d5deb]" started-at="2023-11-05T22:00:08 IST" name="postUser" data-provider="Data" finished-at="2023-11-05T22:00:09 IST" duration-ms="1228" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{FirstName=TestC, UserId=7856, Password=password-c, LastName=UserC, Phone=788415166, UserName=testuser-c, Email=c@gmail.com}]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- testCreateUser -->
+        <test-method signature="testGetUser()[pri:2, instance:com.petstore.test.UserTCPropFile@76a4ebf2]" started-at="2023-11-08T07:46:31 IST" name="testGetUser" finished-at="2023-11-08T07:46:32 IST" duration-ms="1179" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postUser -->
-        <test-method signature="postUser(java.util.Hashtable)[pri:1, instance:com.petstore.test.DataDrivenTest@576d5deb]" started-at="2023-11-05T22:00:09 IST" name="postUser" data-provider="Data" finished-at="2023-11-05T22:00:10 IST" duration-ms="1195" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{FirstName=TestD, UserId=8656, Password=password-d, LastName=UserD, Phone=466552316, UserName=testuser-d, Email=d@gmail.com}]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- testGetUser -->
+        <test-method signature="testUpdateUser()[pri:3, instance:com.petstore.test.UserTCPropFile@76a4ebf2]" started-at="2023-11-08T07:46:32 IST" name="testUpdateUser" finished-at="2023-11-08T07:46:33 IST" duration-ms="1152" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postUser -->
-        <test-method signature="delUser(java.lang.String)[pri:2, instance:com.petstore.test.DataDrivenTest@576d5deb]" started-at="2023-11-05T22:00:10 IST" name="delUser" data-provider="UserNames" finished-at="2023-11-05T22:00:12 IST" duration-ms="1242" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testuser-a]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- testUpdateUser -->
+        <test-method signature="testDeleteUser()[pri:4, instance:com.petstore.test.UserTCPropFile@76a4ebf2]" started-at="2023-11-08T07:46:33 IST" name="testDeleteUser" finished-at="2023-11-08T07:46:34 IST" duration-ms="1129" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- delUser -->
-        <test-method signature="delUser(java.lang.String)[pri:2, instance:com.petstore.test.DataDrivenTest@576d5deb]" started-at="2023-11-05T22:00:12 IST" name="delUser" data-provider="UserNames" finished-at="2023-11-05T22:00:13 IST" duration-ms="1218" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testuser-b]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delUser -->
-        <test-method signature="delUser(java.lang.String)[pri:2, instance:com.petstore.test.DataDrivenTest@576d5deb]" started-at="2023-11-05T22:00:13 IST" name="delUser" data-provider="UserNames" finished-at="2023-11-05T22:00:14 IST" duration-ms="1219" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testuser-c]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delUser -->
-        <test-method signature="delUser(java.lang.String)[pri:2, instance:com.petstore.test.DataDrivenTest@576d5deb]" started-at="2023-11-05T22:00:14 IST" name="delUser" data-provider="UserNames" finished-at="2023-11-05T22:00:15 IST" duration-ms="1169" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testuser-d]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- delUser -->
-      </class> <!-- com.petstore.test.DataDrivenTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- testDeleteUser -->
+      </class> <!-- com.petstore.test.UserTCPropFile -->
+    </test> <!-- Test -->
+  </suite> <!-- PetSuite -->
 </testng-results>
